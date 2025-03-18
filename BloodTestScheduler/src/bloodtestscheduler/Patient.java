@@ -27,6 +27,12 @@ public class Patient {
         this.gpDetails = gpDetails;
     }
 
+    public String getName() {
+        return name;
+    }
+    
+    
+
     //Code Inspired from Oracle Documentation(https://docs.oracle.com/en/java/javase/17/language/switch-expressions-and-statements.html )
     //Original code:
     /*int numLetters = 0;
@@ -47,12 +53,44 @@ public class Patient {
             case "medium" -> 200; //If priority is medium assigns a base score of 200
             default -> 100; //for low or any other value it assigns a base score of 100
         };
-        return baseKey + (fromHospital ? 50 : 0) + (age / 2); //adds 50 points if the patient is coming from a ward and then adds half the patient age
+        return baseKey /*+(fromHospital ? 50 : 0)*/+ (age / 2); //adds half the patient age to the points
     }
 
     @Override
     public String toString() { // returns a String representation of this object
         return name + " (Age: " + age + ", Priority: " + priority + ", Hospital: " + fromHospital + ")";
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getPriority() {
+        return priority;
+    }
+
+    public void setPriority(String priority) {
+        this.priority = priority;
+    }
+
+    public boolean isFromHospital() {
+        return fromHospital;
+    }
+
+    public void setFromHospital(boolean fromHospital) {
+        this.fromHospital = fromHospital;
+    }
+
+    public String getGpDetails() {
+        return gpDetails;
+    }
+
+    public void setGpDetails(String gpDetails) {
+        this.gpDetails = gpDetails;
     }
 }
 

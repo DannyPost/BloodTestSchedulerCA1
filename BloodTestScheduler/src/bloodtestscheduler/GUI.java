@@ -4,17 +4,31 @@
  */
 package bloodtestscheduler;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author bogda
  */
 public class GUI extends javax.swing.JFrame {
 
+    //private BloodTestScheduler scheduler;
+    private BloodTestScheduler scheduler = new BloodTestScheduler();
+    /*private JTextArea queueDisplay;
+    private JTextField nameField, ageField, gpField;
+    private JComboBox<String> priorityBox;
+    private JCheckBox hospitalCheckBox;*/
+    
+    
     /**
      * Creates new form GUI
      */
     public GUI() {
-        initComponents();
+        scheduler = new BloodTestScheduler(); // initialize scheduler
+        initComponents(); //NetBeans auto-generated method
     }
 
     /**
@@ -26,22 +40,342 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
+        titleLbl = new javax.swing.JLabel();
+        nameLbl = new javax.swing.JLabel();
+        nameTf = new javax.swing.JTextField();
+        ageLbl = new javax.swing.JLabel();
+        ageTf = new javax.swing.JTextField();
+        priorityLbl = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        wardLbl = new javax.swing.JLabel();
+        wardTf = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        detailsTa = new javax.swing.JTextArea();
+        addBtn = new javax.swing.JButton();
+        nextBtn = new javax.swing.JButton();
+        markNoShowBtn = new javax.swing.JButton();
+        viewNoShowBtn = new javax.swing.JButton();
+        clearBtn = new javax.swing.JButton();
+        gpCb = new javax.swing.JCheckBox();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+
+        titleLbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        titleLbl.setText("Blood Test Scheduler");
+
+        nameLbl.setText("Name:");
+
+        nameTf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameTfActionPerformed(evt);
+            }
+        });
+
+        ageLbl.setText("Age:");
+
+        priorityLbl.setText("Priority:");
+
+        buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setText("Urgent");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setText("Medium");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(jRadioButton3);
+        jRadioButton3.setText("Low");
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton3ActionPerformed(evt);
+            }
+        });
+
+        wardLbl.setText("Ward(yes/no):");
+
+        detailsTa.setColumns(20);
+        detailsTa.setRows(5);
+        jScrollPane1.setViewportView(detailsTa);
+
+        addBtn.setText("Add");
+        addBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBtnActionPerformed(evt);
+            }
+        });
+
+        nextBtn.setText("Process Next Patient");
+        nextBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextBtnActionPerformed(evt);
+            }
+        });
+
+        markNoShowBtn.setText("Mark No-Show");
+        markNoShowBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                markNoShowBtnActionPerformed(evt);
+            }
+        });
+
+        viewNoShowBtn.setText("View No-Show Patients");
+        viewNoShowBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewNoShowBtnActionPerformed(evt);
+            }
+        });
+
+        clearBtn.setText("Clear");
+        clearBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearBtnActionPerformed(evt);
+            }
+        });
+
+        gpCb.setText("GP Details");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(nextBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(markNoShowBtn)
+                                        .addComponent(viewNoShowBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(addBtn))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(ageLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(52, 52, 52)
+                                        .addComponent(ageTf))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(nameLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(52, 52, 52)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(titleLbl)
+                                                .addGap(0, 88, Short.MAX_VALUE))
+                                            .addComponent(nameTf)))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(priorityLbl, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(wardLbl, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(66, 66, 66)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jRadioButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(49, 49, 49)
+                                        .addComponent(wardTf)))))
+                        .addGap(98, 98, 98))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(clearBtn)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(272, 272, 272)
+                .addComponent(gpCb)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(titleLbl)
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nameTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nameLbl))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ageLbl)
+                            .addComponent(ageTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jRadioButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jRadioButton2)
+                            .addComponent(priorityLbl))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(wardTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(wardLbl))
+                        .addGap(27, 27, 27)
+                        .addComponent(gpCb)
+                        .addGap(43, 43, 43)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(284, 284, 284)
+                        .addComponent(addBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(nextBtn)
+                        .addGap(18, 18, 18)
+                        .addComponent(markNoShowBtn)
+                        .addGap(18, 18, 18)
+                        .addComponent(viewNoShowBtn)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(clearBtn)
+                .addContainerGap(13, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void nameTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameTfActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
+
+    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+        // TODO add your handling code here:
+        String name = nameTf.getText();
+        String ageText = ageTf.getText();
+        String wardText = wardTf.getText();
+        String priority = null;
+
+        //if statements for ptiority radio buttons
+        if (jRadioButton1.isSelected()) {
+            priority = "urgent";
+        } else if (jRadioButton2.isSelected()) {
+            priority = "medium";
+        } else if (jRadioButton3.isSelected()) {
+            priority = "low";
+        }
+
+        boolean fromHospital = wardText.equalsIgnoreCase("yes");
+
+        if (name.isEmpty() || ageText.isEmpty() || priority == null) {
+            JOptionPane.showMessageDialog(this, "Please fill in Name, Age, and Priority.");
+            return;
+        }
+
+        //checks if the age input is a number
+        int age;
+        try {
+            age = Integer.parseInt(ageText);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Age must be a number.");
+            return;
+        }
+
+        String gpDetails = gpCb.isSelected() ? "GP Provided" : "No GP Provided";
+
+        scheduler.addPatient(name, age, priority, fromHospital, gpDetails);
+        JOptionPane.showMessageDialog(this, "Patient added!");
+        updateQueueDisplay();
+        clearFields();
+    
+    }//GEN-LAST:event_addBtnActionPerformed
+
+    private void nextBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBtnActionPerformed
+        // TODO add your handling code here:
+        Patient nextPatient = scheduler.getNextPatient();
+        if (nextPatient != null) {
+            JOptionPane.showMessageDialog(this, "Next patient: \n" + nextPatient);
+        } else {
+            JOptionPane.showMessageDialog(this, "No patients in queue.");
+        }
+        updateQueueDisplay();
+    
+    }//GEN-LAST:event_nextBtnActionPerformed
+
+    private void markNoShowBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_markNoShowBtnActionPerformed
+        // TODO add your handling code here:
+            String name = JOptionPane.showInputDialog(this, "Enter the name of the patient to mark as no-show:");
+        if (name == null || name.isEmpty()) {
+            return;
+        }
+
+        Patient patient = scheduler.findPatientByName(name);
+        if (patient != null) {
+            scheduler.markNoShow(patient);
+            JOptionPane.showMessageDialog(this, name + " marked as no show.");
+            //updateQueueDisplay();
+        } else {
+            JOptionPane.showMessageDialog(this, "Patient not found in the queue.");
+        }
+    }//GEN-LAST:event_markNoShowBtnActionPerformed
+
+    private void viewNoShowBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewNoShowBtnActionPerformed
+        // TODO add your handling code here:
+       // String noShows = scheduler.getNoShowPatients();
+        //JOptionPane.showMessageDialog(this, "Last 5 No-Show Patients:\n" + noShows);
+    }//GEN-LAST:event_viewNoShowBtnActionPerformed
+
+    private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
+        // TODO add your handling code here:
+         clearFields();
+    }//GEN-LAST:event_clearBtnActionPerformed
+
+    private void updateQueueDisplay() {
+        detailsTa.setText("Current Queue:\n" + scheduler.getAllPatientsAsString());
+    }
+    
+    
+    private void clearFields() {
+        nameTf.setText("");
+        ageTf.setText("");
+        wardTf.setText("");
+        buttonGroup1.clearSelection();
+        gpCb.setSelected(false);
+        detailsTa.setText("");
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -78,5 +412,26 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addBtn;
+    private javax.swing.JLabel ageLbl;
+    private javax.swing.JTextField ageTf;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton clearBtn;
+    private javax.swing.JTextArea detailsTa;
+    private javax.swing.JCheckBox gpCb;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton markNoShowBtn;
+    private javax.swing.JLabel nameLbl;
+    private javax.swing.JTextField nameTf;
+    private javax.swing.JButton nextBtn;
+    private javax.swing.JLabel priorityLbl;
+    private javax.swing.JLabel titleLbl;
+    private javax.swing.JButton viewNoShowBtn;
+    private javax.swing.JLabel wardLbl;
+    private javax.swing.JTextField wardTf;
     // End of variables declaration//GEN-END:variables
 }
