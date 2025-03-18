@@ -10,10 +10,10 @@ package bloodtestscheduler;
  */
 public interface PriorityQueueInterface {
 
-    public void enqueue(int iKey, Object theElement);
+    public void enqueue(int iKey, Object theElement); // adds new element to the priority queue
     public int size();
     public boolean isEmpty();
-    public Object dequeue();
+    public Object dequeue(); //removes and returns the element
     public void printPQueue();
 
 }
